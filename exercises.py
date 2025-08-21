@@ -141,7 +141,11 @@ print('Exercise 7:', calculate_tip(50, 20))
 #
 # Define the function and call it with different sets of numbers to test.
 
-def product():
+def product(*nums):
+    product = 1
+    for num in nums:
+        product = product * num
+    return product
 
 print('Exercise 8:', product(2, 5, 5))
 
@@ -160,6 +164,19 @@ print('Exercise 8:', product(2, 5, 5))
 #
 # Define the function and then call it below.
 
-
+def basic_calculator(num1, num2, operation):
+    op = operation.upper()
+    match op:
+        case "ADD":
+            return num1 + num2
+        case "SUBTRACT":
+            return num1 - num2
+        case "MULTIPLY":
+            return num1 * num2
+        case "DIVIDE":
+            return num1 / num2
 
 print('Exercise 9 Result:', basic_calculator(10, 5, "subtract"))
+print('Exercise 9 Result:', basic_calculator(10, 5, "add"))
+print('Exercise 9 Result:', basic_calculator(10, 5, "multiply"))
+print('Exercise 9 Result:', basic_calculator(10, 5, "divide"))
